@@ -6,7 +6,7 @@ import "./App.css";
 
 class App extends Component {
   render() {
-    const n = 1;
+    const n = 100000;
     return (
       <div>
         <Flex n={n} />

@@ -11,15 +11,20 @@ div{
     align-content: center;
 }
 
-comparing render time
-
-
-
 ## Results:
+#### (all number is 3 times average)
 
-| n     |    flex     |  padding  |
-| ------|:-----------:| ---------:|
-| 1     |  30.1272ms  | 17.5259ms |
-| 100   |  38.8999ms  | 26.2708ms |
-| 1000  | 111.9160ms  | 63.2383ms |
-| 10000 | 705.2390ms  | 300.897ms |
+| n         |    flex     |  padding  |
+| --------- |:-----------:| ---------:|
+| 1         |  13.0187ms  |  7.9173ms |
+| 10        |  17.4795ms  |   10.16ms |
+| 100       |  38.9364ms  | 21.9495ms |
+| 1000      | 210.5345ms  | 82.7853ms |
+| 10000     | 778.4514ms  | 330.926ms |
+| 100000    | 6442.033ms  |  3299.9ms |
+
+
+## Conclusion
+
+It is almost no chance you will have so much elements of one type, 
+but it is obvious that flex implementation is heavier and you should prefer padding + text-align if possible. 
