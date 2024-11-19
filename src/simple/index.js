@@ -1,12 +1,27 @@
 import React, { Component } from "react";
-import "./App.css";
 
 class Simple extends Component {
-  state = {
-    items: Array.of(this.props.n).map(el => "ok")
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: new Array(props.n).fill("ok")
+    };
+  }
+
+  componentWillMount() {
+    console.time("simple");
+  }
+  componentDidMount() {
+    console.timeEnd("simple");
+  }
   render() {
-    return this.state.items.map(el => <button className="simple">{el}</button>);
+    console.log(this.props.n, this.state.items);
+    return this.state.items.map((el, i) => (
+      <div key={i} className="simple">
+        {el}
+        {i}
+      </div>
+    ));
   }
 }
 
